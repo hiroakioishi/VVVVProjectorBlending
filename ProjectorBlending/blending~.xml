@@ -1,0 +1,455 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.dtd" >
+   <PATCH nodename="C:\Users\user1\Documents\teamLab\hoishi\git\VVVVProjectorBlending\ProjectorBlending\blending.v4p" systemname="blending" filename="C:\Program Files (x86)\vvvv_45beta34_x64\patches\HorizontalBlending\blending.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="11145" top="9810" width="20265" height="9855">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.0.0">
+   </PACK>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="2865" top="4005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="FileTexture (EX9.Texture)" nodename="FileTexture (EX9.Texture)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2850" top="2955" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2865" top="2460" width="7845" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2865" top="2460" width="7845" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="C:\Users\user1\Documents\teamLab\hoishi\git\VVVVProjectorBlending\ProjectorBlending\images\UVTextureChecker4096.png">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output String" dstnodeid="6" dstpinname="Filename">
+   </LINK>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="2865" top="3435" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Texture Out" dstnodeid="8" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Blending (EX9.Effect)" filename="%VVVV%\patches\HorizontalBlending\effects\Blending.fx" nodename="Blending (EX9.Effect)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="3180" top="7500" width="1950" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Src" visible="1">
+   </PIN>
+   <PIN pinname="SrcTex" visible="1">
+   </PIN>
+   <PIN pinname="tex0" visible="1">
+   </PIN>
+   <PIN pinname="tex1" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="ProjectorNum" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="WallNum" visible="1">
+   </PIN>
+   <PIN pinname="OverlayWidth" visible="1">
+   </PIN>
+   <PIN pinname="Power" visible="1" slicecount="1" values="0.52">
+   </PIN>
+   <PIN pinname="Alpha" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Projector Num" visible="1" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Wall Num" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Blend Factor 1" visible="1" slicecount="1" values="5.59">
+   </PIN>
+   <PIN pinname="Blend Factor 2" visible="1" slicecount="1" values="0.39">
+   </PIN>
+   <PIN pinname="Blend Offset" visible="1" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="Overlay Rate" visible="1" slicecount="1" values="0.16">
+   </PIN>
+   <PIN pinname="V Shift" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="4" dstpinname="Layer 1">
+   </LINK>
+   <NODE componentmode="Hidden" id="14" nodename="DX9Texture (EX9.Texture)" systemname="DX9Texture (EX9.Texture)">
+   <BOUNDS height="270" left="3660" top="4740" type="Node" width="945">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Format" pintype="Input" visible="1" slicecount="1" values="|No Specific|">
+   </PIN>
+   <PIN pinname="Width" pintype="Input" visible="1" slicecount="1" values="400">
+   </PIN>
+   <PIN pinname="Height" pintype="Input" visible="1" slicecount="1" values="300">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="9" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="9" dstpinname="Src">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="9" dstpinname="SrcTex">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="9" dstpinname="tex0">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="9" dstpinname="tex1">
+   </LINK>
+   <NODE systemname="Grid (EX9.Geometry)" nodename="Grid (EX9.Geometry)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="1290" top="6810" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="1845" top="6795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1" slicecount="3" values="1,1,1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="27">
+   <BOUNDS type="Node" left="2280" top="6255" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2280" top="6255" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="28" dstpinname="XYZ">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Mesh" dstnodeid="9" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Transform Out" dstnodeid="9" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="34" exposed="0">
+   <BOUNDS type="Node" left="4890" top="5745" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4890" top="5745" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="ProjectorNum">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="9" dstpinname="ProjectorNum">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" exposed="0">
+   <BOUNDS type="Node" left="3795" top="5745" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3795" top="5745" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="WallNum">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="9" dstpinname="WallNum">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="36" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="5955" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5955" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5.59">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Blend Factor 1|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="9" dstpinname="OverlayWidth">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="7035" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7035" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.39">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Blend Factor 2|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="38" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="10185" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10185" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.59">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Power">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="39" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="11220" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11220" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Alpha">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="40" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="8085" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8085" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.01">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Blend Offset|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="41" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="9135" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9135" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.12">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Overlay Rate|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)" exposed="0">
+   <BOUNDS type="Box" left="12255" top="5745" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12255" top="5745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|V Shift|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Projector Num" linkstyle="Bezier">
+   <LINKPOINT x="4890" y="6735">
+   </LINKPOINT>
+   <LINKPOINT x="4005" y="6735">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Wall Num" linkstyle="Bezier">
+   <LINKPOINT x="3825" y="6743">
+   </LINKPOINT>
+   <LINKPOINT x="3825" y="6743">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Blend Factor 1" linkstyle="Bezier">
+   <LINKPOINT x="5955" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="4170" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Blend Factor 2" linkstyle="Bezier">
+   <LINKPOINT x="7035" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="4335" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Power" linkstyle="Bezier">
+   <LINKPOINT x="10185" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="4800" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Alpha" linkstyle="Bezier">
+   <LINKPOINT x="11220" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="4950" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Blend Offset" linkstyle="Bezier">
+   <LINKPOINT x="8085" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="4485" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Overlay Rate" linkstyle="Bezier">
+   <LINKPOINT x="9135" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="4635" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="9" dstpinname="V Shift" linkstyle="Bezier">
+   <LINKPOINT x="12255" y="6728">
+   </LINKPOINT>
+   <LINKPOINT x="5115" y="6728">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="43">
+   <BOUNDS type="Node" left="3180" top="8430" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3180" top="8430" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="17385" top="4770" width="14010" height="5025">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Layer" dstnodeid="43" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="44">
+   <BOUNDS type="Node" left="3105" top="3990" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3105" top="3990" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11175" top="4755" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="44" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="44" srcpinname="EX9 Out" dstnodeid="14" dstpinname="Source">
+   </LINK>
+   <INFO author="OISHIHiroaki" description="水平方向の複数台プロジェクタのためのブレンディングエフェクト" tags="Blending">
+   </INFO>
+   <NODE id="46" nodename="IOBox (String)" componentmode="InABox" systemname="IOBox (String)" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="330" top="285" width="5100" height="450">
+   </BOUNDS>
+   <BOUNDS type="Box" left="330" top="285" width="5100" height="450">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" pintype="Input" values="|ProjectorBlending (EX9.Effect)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0" pintype="Output">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" visible="1" pintype="Configuration" values="14">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Pin Visibility" pintype="Configuration" slicecount="1" values="True">
+   </PIN>
+   <PIN pinname="SliceCount Mode" pintype="Configuration" slicecount="1" values="Input">
+   </PIN>
+   <PIN pinname="Columns" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Rows" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pages" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show SliceIndex" pintype="Configuration" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Font" pintype="Configuration" slicecount="1" values="|Lucida Sans Unicode|">
+   </PIN>
+   <PIN pinname="Show Grid" pintype="Configuration" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" pintype="Configuration" slicecount="1" values="String">
+   </PIN>
+   <PIN pinname="Default" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" pintype="Configuration" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Show Characters [#0..#32,#127]" pintype="Configuration" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="SliceOffset" pintype="Input" visible="-1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="45" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="255" left="330" top="780" type="Node" width="570">
+   </BOUNDS>
+   <BOUNDS height="270" left="330" top="780" type="Box" width="4200">
+   </BOUNDS>
+   <BOUNDS height="160" left="-3540" top="8040" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" encoded="0" values="水平方向の複数台のプロジェクタによる投影のためのブレンディングエフェクトです">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="47" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="255" left="315" top="1065" type="Node" width="570">
+   </BOUNDS>
+   <BOUNDS height="270" left="315" top="1065" type="Box" width="4200">
+   </BOUNDS>
+   <BOUNDS height="160" left="-3540" top="8040" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" encoded="0" values="|@OISHIHiroaki oishi@team-lab.com|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   </PATCH>
